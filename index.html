@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sixers | Premium Restaurant</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+    <nav class="navbar">
+        <div class="nav-container max-width">
+            <div class="nav-left">
+                <img src="https://cdn-icons-png.flaticon.com/512/1144/1144760.png" alt="User" class="nav-icon">
+                <span>Login</span>
+            </div>
+
+            <h1 class="logo">SIXERS</h1>
+
+            <div class="nav-right">
+                <div class="cart-wrapper">
+                    <span>Cart</span>
+                    <img src="https://cdn-icons-png.flaticon.com/512/1170/1170678.png" alt="Cart" class="nav-icon">
+                    <span id="cart-count">0</span>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <header class="hero">
+        <div class="hero-content">
+            <h2>Welcome to Sixers</h2>
+            <p>Fresh Ingredients. Exceptional Taste.</p>
+        </div>
+    </header>
+
+    <main class="max-width">
+        <section class="service-box">
+            <div id="status-tag" class="status-tag">
+                <span class="dot"></span>
+                <span id="status-text">Checking Status...</span>
+            </div>
+
+            <div class="option-grid">
+                <button class="opt-btn active" data-type="delivery">Delivery</button>
+                <button class="opt-btn" data-type="takeaway">Take Away</button>
+                <button class="opt-btn" data-type="dinein">Dine In</button>
+            </div>
+        </section>
+
+        <section class="menu-section">
+            <h3 class="section-title">Explore Our Menu</h3>
+            <div class="category-grid">
+                <div class="cat-item" onclick="openMenu('Fast Food')">
+                    <img src="https://images.unsplash.com/photo-1571091718767-18b5b1457add?w=400" alt="Fast Food">
+                    <span>Fast Food</span>
+                </div>
+                <div class="cat-item" onclick="openMenu('South Indian')">
+                    <img src="https://images.unsplash.com/photo-1589302168068-964664d93dc0?w=400" alt="South Indian">
+                    <span>South Indian</span>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <div id="menu-modal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 id="modal-category">Menu</h2>
+                <span class="close-btn">&times;</span>
+            </div>
+            <div id="menu-list" class="menu-list">
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <div class="footer-container max-width">
+            <div class="footer-left">
+                <h1 class="logo">SIXERS</h1>
+            </div>
+
+            <div class="footer-center">
+                <h4>CONTACT US</h4>
+                <p>📞 +91 99887 76655</p>
+                <p>✉️ support@sixers.com</p>
+                <div class="social-links">
+                    <a href="#">Instagram</a> | <a href="#">Facebook</a> | <a href="#">Twitter</a>
+                </div>
+            </div>
+
+            <div class="footer-right">
+                <h4>QUICK LINKS</h4>
+                <a href="#">About Sixers</a>
+                <a href="#">Terms of Service</a>
+                <a href="#">Privacy Policy</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
