@@ -14,6 +14,19 @@
     <nav class="navbar">
         <div class="nav-container max-width">
             <div class="nav-left">
+                <div class="dropdown">
+                    <div class="three-dots" onclick="toggleDropdown(event)">
+                        <span></span><span></span><span></span>
+                    </div>
+                    <div id="side-dropdown" class="dropdown-content">
+                        <div class="user-id-tag">ID: #SIX9923</div>
+                        <a href="#" onclick="openCart()">My Orders</a>
+                        <a href="#">Offers %</a>
+                        <a href="#">Payment History</a>
+                        <hr>
+                        <a href="#">Settings</a>
+                    </div>
+                </div>
                 <img src="https://cdn-icons-png.flaticon.com/512/1144/1144760.png" alt="User" class="nav-icon">
                 <span>Login</span>
             </div>
@@ -21,7 +34,7 @@
             <h1 class="logo">SIXERS</h1>
 
             <div class="nav-right">
-                <div class="cart-wrapper">
+                <div class="cart-wrapper" onclick="openCart()" style="cursor: pointer;">
                     <span>Cart</span>
                     <img src="https://cdn-icons-png.flaticon.com/512/1170/1170678.png" alt="Cart" class="nav-icon">
                     <span id="cart-count">0</span>
@@ -29,6 +42,20 @@
             </div>
         </div>
     </nav>
+
+    <div id="cart-overlay" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Your Cart / Orders</h2>
+                <span class="close-btn" onclick="closeCart()">&times;</span>
+            </div>
+            <div id="cart-items-list" class="menu-list">
+            </div>
+            <div class="cart-footer" id="cart-footer">
+                <p>Your cart is empty.</p>
+            </div>
+        </div>
+    </div>
 
     <header class="hero">
         <div class="hero-content">
@@ -45,9 +72,15 @@
             </div>
 
             <div class="option-grid">
-                <button class="opt-btn active" data-type="delivery">Delivery</button>
-                <button class="opt-btn" data-type="takeaway">Take Away</button>
+                <button class="opt-btn active" data-type="takeaway">Take Away</button>
                 <button class="opt-btn" data-type="dinein">Dine In</button>
+            </div>
+
+            <div style="margin-top: 20px;">
+                <button class="menu-trigger-btn"
+                    onclick="document.querySelector('.menu-section').scrollIntoView({behavior: 'smooth'})">
+                    View Full Menu
+                </button>
             </div>
         </section>
 
@@ -55,12 +88,35 @@
             <h3 class="section-title">Explore Our Menu</h3>
             <div class="category-grid">
                 <div class="cat-item" onclick="openMenu('Fast Food')">
-                    <img src="https://images.unsplash.com/photo-1571091718767-18b5b1457add?w=400" alt="Fast Food">
+                    <img src="https://images.unsplash.com/photo-1521305916504-4a1121188589?w=400"
+                        alt="Veg Burger and Fries">
                     <span>Fast Food</span>
                 </div>
+
                 <div class="cat-item" onclick="openMenu('South Indian')">
-                    <img src="https://images.unsplash.com/photo-1589302168068-964664d93dc0?w=400" alt="South Indian">
+                    <img src="https://images.unsplash.com/photo-1589302168068-964664d93dc0?w=400" alt="Masala Dosa">
                     <span>South Indian</span>
+                </div>
+
+                <div class="cat-item" onclick="openMenu('Chinese')">
+                    <img src="https://images.unsplash.com/photo-1585032226651-759b368d7246?w=400" alt="Veg Noodles">
+                    <span>Chinese</span>
+                </div>
+
+                <div class="cat-item" onclick="openMenu('North Indian')">
+                    <img src="https://images.unsplash.com/photo-1631452180519-c014fe946bc7?w=400"
+                        alt="Paneer Butter Masala">
+                    <span>North Indian</span>
+                </div>
+
+                <div class="cat-item" onclick="openMenu('Desserts')">
+                    <img src="https://images.unsplash.com/photo-1563729784474-d77dbb933a9e?w=400" alt="Desserts">
+                    <span>Desserts</span>
+                </div>
+
+                <div class="cat-item" onclick="openMenu('Beverages')">
+                    <img src="https://images.unsplash.com/photo-1544145945-f904253d0c71?w=400" alt="Fresh Beverages">
+                    <span>Beverages</span>
                 </div>
             </div>
         </section>
@@ -70,10 +126,10 @@
         <div class="modal-content">
             <div class="modal-header">
                 <h2 id="modal-category">Menu</h2>
-                <span class="close-btn">&times;</span>
+                <span class="close-btn"
+                    onclick="document.getElementById('menu-modal').style.display='none'">&times;</span>
             </div>
-            <div id="menu-list" class="menu-list">
-            </div>
+            <div id="menu-list" class="menu-list"></div>
         </div>
     </div>
 
